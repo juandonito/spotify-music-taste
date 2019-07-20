@@ -1,9 +1,10 @@
 import React from 'react'
+import Login from './Login'
 
 const App = () => {
     return (
         <div>
-            This is my app boilerplate
+            <Login />
         </div>
     )
 }
