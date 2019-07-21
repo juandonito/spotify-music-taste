@@ -1,10 +1,15 @@
 import React from 'react'
+
+import { BrowserRouter, Route } from 'react-router-dom'
+
 import Login from './Login'
 
 const App = () => {
     return (
         <div>
-            <Login />
+            <BrowserRouter>
+                <Route path='/' exact component={Login}/>
+            </BrowserRouter>
         </div>
     )
 }

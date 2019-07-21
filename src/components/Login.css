@@ -19,7 +19,7 @@ button{
     font-size: 16px;
     letter-spacing: 1px;
 
-    background: #724478;
+    background: #014B50;
     border: none;
     border-radius: 2em;
 
@@ -31,5 +31,5 @@ button{
 }
 
 button:active{
-    background: #663d6b;
+    background: rgb(1, 64, 68);
 }
