@@ -1,8 +1,11 @@
 import React from 'react'
+import { connect } from 'react-redux'
+
+import { doAuthFetchSuccess } from '../actions/authActions'
 
 import { Redirect } from 'react-router-dom'
 
-const Auth = () => {
+const Auth = ({ fetchSuccess }) => {
 
     // parsing data in url
 
@@ -15,7 +18,15 @@ const Auth = () => {
         data = {...data, [keyVal[0]] : keyVal[1]}
     }
 
+    fetchSuccess(data)
+
     return data.access_token ? <Redirect to='/' /> : null
 }
 
-export default Auth
+const mapDispatchToProps = (dispatch) => {
+    return {
+        fetchSuccess : data => dispatch(doAuthFetchSuccess(data))
+    }
+}
+
+export default connect(null, mapDispatchToProps)(Auth)
