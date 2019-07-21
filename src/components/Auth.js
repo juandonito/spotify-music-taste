@@ -1,26 +1,35 @@
 import React from 'react'
 import { connect } from 'react-redux'
-
 import { doAuthFetchSuccess } from '../actions/authActions'
+
+import parseHash from '../utils/parseHash'
 
 import { Redirect } from 'react-router-dom'
 
-const Auth = ({ fetchSuccess }) => {
+class Auth extends React.Component{
 
-    // parsing data in url
+    componentDidMount(){
 
-    let data = {}
+        const { fetchSuccess } = this.props
 
-    const query = window.location.hash.slice(1).split('&')
-
-    for (let i = 0 ; i < query.length ; i++ ){
-        const keyVal = query[i].split('=')
-        data = {...data, [keyVal[0]] : keyVal[1]}
+        const hash = window.location.hash.slice(1)
+        fetchSuccess(parseHash(hash))
+        
     }
 
-    fetchSuccess(data)
+    render() {
 
-    return data.access_token ? <Redirect to='/top-artists' /> : null
+        const { access_token } = this.props
+
+        return access_token ? <Redirect to='/top-artists' /> : <Redirect to='/'/>
+    }
+
+}
+
+const mapStateToProps = (state) => {
+    return {
+        access_token: state.authState.access_token
+    }
 }
 
 const mapDispatchToProps = (dispatch) => {
@@ -29,4 +38,4 @@ const mapDispatchToProps = (dispatch) => {
     }
 }
 
-export default connect(null, mapDispatchToProps)(Auth)
+export default connect(mapStateToProps, mapDispatchToProps)(Auth)
