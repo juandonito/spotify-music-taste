@@ -4,7 +4,7 @@ export const spotifyAuth = () => {
     const params = {
         client_id: 'a3db038a062d48738f8bd73a9b5dea5f',
         response_type: 'token',
-        redirect_uri: 'http://localhost:3000/callback',
+        redirect_uri: 'http://localhost:3000/auth',
         scope: [
             'user-top-read',
             'user-read-recently-played',
@@ -21,3 +21,5 @@ export const spotifyAuth = () => {
 
     window.location.href = url
 }
+
+
