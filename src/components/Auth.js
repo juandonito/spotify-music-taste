@@ -20,7 +20,7 @@ const Auth = ({ fetchSuccess }) => {
 
     fetchSuccess(data)
 
-    return data.access_token ? <Redirect to='/' /> : null
+    return data.access_token ? <Redirect to='/top-artists' /> : null
 }
 
 const mapDispatchToProps = (dispatch) => {
