@@ -6,23 +6,13 @@ import parseHash from '../utils/parseHash'
 
 import { Redirect } from 'react-router-dom'
 
-class Auth extends React.Component{
+const Auth = ({ access_token, fetchSuccess }) => {
 
-    componentDidMount(){
+    const hash = window.location.hash.slice(1)
 
-        const { fetchSuccess } = this.props
+    fetchSuccess(parseHash(hash))
 
-        const hash = window.location.hash.slice(1)
-        fetchSuccess(parseHash(hash))
-        
-    }
-
-    render() {
-
-        const { access_token } = this.props
-
-        return access_token ? <Redirect to='/top-artists' /> : <Redirect to='/'/>
-    }
+    return access_token ? <Redirect to='/top-artists' /> : <Redirect to='/'/>
 
 }
 

@@ -13,7 +13,7 @@ const App = () => {
             <BrowserRouter>
                 <Route path='/' exact component={Login} />
                 <Route path='/auth' component={Auth} />
-                <ProtectedRoute path='/top-artists' component={TopArtists}/>
+                <Route path='/top-artists' component={TopArtists}/>
             </BrowserRouter>
         </div>
     )

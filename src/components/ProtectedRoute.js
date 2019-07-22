@@ -17,7 +17,7 @@ const ProtectedRoute = ({ component: Component, isAuthenticated, ...rest }) => {
 
 const mapStateToProps = (state) => {
     return {
-        isAuthenticated: !!state.authState.acess_token
+        isAuthenticated: !!state.authState.access_token
     }
 }
 
