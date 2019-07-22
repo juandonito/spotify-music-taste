@@ -1,5 +1,5 @@
 import {
-    AUTH_FETCH_SUCCESS
+    AUTH_SUCCESS
 } from '../constants'
 
 const INITIAL_STATE = {
@@ -10,7 +10,7 @@ const INITIAL_STATE = {
 
 const authReducer = (state = INITIAL_STATE, action) => {
     switch(action.type){
-        case AUTH_FETCH_SUCCESS: {
+        case AUTH_SUCCESS: {
             return applyAuthFetchSuccess(state, action)
         }
         default : return state
