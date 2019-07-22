@@ -1,13 +1,6 @@
-import { 
-    AUTH_FETCH,
+import {
     AUTH_SUCCESS
 } from '../constants'
-
-export const doAuthFetch = () => {
-    return {
-        type: AUTH_FETCH
-    }
-}
 
 export const doAuthSuccess = (data) => {
 
