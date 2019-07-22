@@ -1,6 +1,7 @@
 import React from 'react'
 
 import { BrowserRouter, Route } from 'react-router-dom'
+import ProtectedRoute from './ProtectedRoute'
 
 import Login from './Login'
 import Auth from './Auth'
@@ -12,7 +13,7 @@ const App = () => {
             <BrowserRouter>
                 <Route path='/' exact component={Login} />
                 <Route path='/auth' component={Auth} />
-                <Route path='/top-artists' component={TopArtists}/>
+                <ProtectedRoute path='/top-artists' component={TopArtists}/>
             </BrowserRouter>
         </div>
     )
