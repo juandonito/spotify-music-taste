@@ -6,20 +6,14 @@ import parseHash from '../utils/parseHash'
 
 import { Redirect } from 'react-router-dom'
 
-const Auth = ({ access_token, fetchSuccess }) => {
+const Auth = ({ fetchSuccess }) => {
 
     const hash = window.location.hash.slice(1)
 
     fetchSuccess(parseHash(hash))
 
-    return access_token ? <Redirect to='/top-artists' /> : <Redirect to='/'/>
+    return <Redirect to='/top-artists' />
 
-}
-
-const mapStateToProps = (state) => {
-    return {
-        access_token: state.authState.access_token
-    }
 }
 
 const mapDispatchToProps = (dispatch) => {
@@ -28,4 +22,4 @@ const mapDispatchToProps = (dispatch) => {
     }
 }
 
-export default connect(mapStateToProps, mapDispatchToProps)(Auth)
+export default connect(null, mapDispatchToProps)(Auth)
