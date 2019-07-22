@@ -1,0 +1,35 @@
+.login{
+    background: url('../images/vinyl.jpg');
+    background-position: center;
+    background-size: auto 100%;
+    background-repeat: no-repeat;
+
+    height: 100vh;
+    width: 100vw;
+}
+
+button{
+    text-transform: uppercase;
+
+    height: 40px;
+    width: 225px;
+
+    color: white;
+    font-weight: bold;
+    font-size: 16px;
+    letter-spacing: 1px;
+
+    background: #014B50;
+    border: none;
+    border-radius: 2em;
+
+    position: absolute;
+    top: 80%;
+    left: 50%;
+
+    transform: translate(-50%, -50%);
+}
+
+button:active{
+    background: rgb(1, 64, 68);
+}
