@@ -18,13 +18,14 @@ const ArtistItem = ({ artist, rank }) => {
                 <img 
                     className='thumbnail' 
                     src={img.url} 
-                    alt='profile picture' 
+                    alt='profile' 
                 />
             )
         }else{
             return (
                 <img
                     className='thumbnail'
+                    alt='profile not available'
                 />
             )
         }
