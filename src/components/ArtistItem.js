@@ -9,11 +9,31 @@ const ArtistItem = ({ artist, rank }) => {
         images,
         genres
     } = artist
+
+    const helperProfilePicture = () => {
+        const img = images[images.length - 1]
+
+        if (img) {
+            return (
+                <img 
+                    className='thumbnail' 
+                    src={img.url} 
+                    alt='profile picture' 
+                />
+            )
+        }else{
+            return (
+                <img
+                    className='thumbnail'
+                />
+            )
+        }
+    }
     
     return (
         <div className='artist-item'>
             <span className='rank'>{rank}</span>
-            <span className='thumbnail' />
+            {helperProfilePicture()}
             <span className='details'>
                 <span className='artist-name'>
                     {name}
