@@ -24,11 +24,10 @@ export const spotifyAuth = () => {
     window.location.href = url
 }
 
-export default axios.create({
-    baseURL: 'https://api.spotify.com/v1/me',
-    params: {
-        limit: 50
-    }
+
+
+const spotify =  axios.create({
+    baseURL: 'https://api.spotify.com/v1/me'
 })
 
-
+export default spotify

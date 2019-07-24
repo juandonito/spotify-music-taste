@@ -1,20 +1,42 @@
 import './TopArtists.css'
 
 import React from 'react'
+import { connect } from 'react-redux'
 
 import ArtistItem from './ArtistItem'
+import { doFetchTopArtists } from '../actions/artistsAction';
 
-const TopArtists = () => {
+class TopArtists extends React.Component{
 
-    return (
-        <div className='top-artists'>
-            <div className='header'></div>
-            <div className='list'>
-                <ArtistItem />
+    componentDidMount() {
+        const { fetchTopArtists } = this.props;
+        fetchTopArtists()
+    }
+    
+    render() {
+
+        return (
+            <div className='top-artists'>
+                <div className='header'></div>
+                <div className='list'>
+                    <ArtistItem />
+                </div>
             </div>
-        </div>
-    )
+        )
+    }
 
 }
 
-export default TopArtists
+const mapstateToProps = (state) => {
+    return {
+        topArtists: state.artistsState.topArtists
+    }
+}
+
+const mapDispatchToProps = (dispatch) => {
+    return {
+        fetchTopArtists : () => dispatch(doFetchTopArtists())
+    }
+}
+
+export default connect(mapstateToProps, mapDispatchToProps)(TopArtists)
