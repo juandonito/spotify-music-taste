@@ -1,5 +1,10 @@
 .top-artists {
     width: 100%;
+    max-width: 700px;
+    margin: 0 auto;
+    -webkit-box-shadow: 0px 0px 19px 0px rgba(0,0,0,0.2);
+    -moz-box-shadow: 0px 0px 19px 0px rgba(0,0,0,0.2);
+    box-shadow: 0px 0px 19px 0px rgba(0,0,0,0.2);
 }
 
 .header {
@@ -10,11 +15,11 @@
 
     height: 200px;
     width: 100%;
+    max-width: 700px;
 
-    background: url(../images/musician.jpg);
+    background: url(../images/band.jpg);
     background-size: cover;
     background-repeat: no-repeat;
-    background-position: center;
 }
 
 .list {    
@@ -36,3 +41,49 @@
 
     color: white;
 }
+
+.artist-entry{
+    display: flex;
+    padding: 8px 16px;
+}
+
+.artist-entry span{
+    margin: auto 4px;
+}
+
+.artist-entry:hover{
+    background: rgb(248, 248, 248);
+}
+
+.rank{
+    font-size: 16px;
+    font-weight: bold;
+    color: #6A6A6A;
+}
+
+.thumbnail{
+    height: 40px;
+    width: 40px;
+    border-radius: 8px;
+    background: black;
+}
+
+.details{
+    display: flex;
+    flex-direction: column;
+}
+
+.artist-name{
+    font-size: 16px;
+    font-weight: bold;
+    letter-spacing: 1px;
+}
+
+.artist-genre{
+    font-size: 12px;
+    font-weight: bold;
+    letter-spacing: 0.5px;
+    color: #6A6A6A;
+}
+
+
