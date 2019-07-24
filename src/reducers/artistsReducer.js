@@ -22,7 +22,7 @@ const artistsReducer = (state = INITIAL_STATE, action) => {
 const applyTopArtistsFetchSuccess = (state, action) => {
     return {
         ...state,
-        topArtists: action.payload
+        topArtists: action.payload.list
     }
 }
 

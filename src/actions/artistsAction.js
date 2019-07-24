@@ -35,7 +35,7 @@ export const doFetchTopArtistsSuccess = (list) => {
     return {
         type: TOP_ARTISTS_FETCH_SUCCESS,
         payload: {
-            ...list
+            list: [...list]
         }
     }
 
