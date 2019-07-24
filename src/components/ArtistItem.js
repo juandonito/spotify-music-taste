@@ -2,18 +2,24 @@ import './ArtistItem.css'
 
 import React from 'react'
 
-const ArtistItem = () => {
+const ArtistItem = ({ artist, rank }) => {
+
+    const {
+        name,
+        images,
+        genres
+    } = artist
     
     return (
         <div className='artist-item'>
-            <span className='rank'>1</span>
+            <span className='rank'>{rank}</span>
             <span className='thumbnail' />
             <span className='details'>
                 <span className='artist-name'>
-                    Nekfeu
+                    {name}
                 </span>
                 <span className='artist-genre'>
-                    rap,hip-hop, genius
+                    {genres.slice(0, 3).join(', ')}
                 </span>
             </span>
         </div>

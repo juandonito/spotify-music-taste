@@ -12,16 +12,18 @@
 }
 
 .rank{
+    width: 32px;
     font-size: 16px;
     font-weight: bold;
     color: #6A6A6A;
+    text-align: center;
 }
 
 .thumbnail{
     height: 40px;
     width: 40px;
     border-radius: 8px;
-    background: black;
+    background: #6A6A6A;
 }
 
 .details{
