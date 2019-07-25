@@ -36,8 +36,6 @@ const TrackItem = ({ track, rank }) => {
         return artistsNameList.join(', ')
     }
 
-    console.log(artists)
-
     return (
         <div className='track-item'>
             <span className='rank'>{rank}</span>
