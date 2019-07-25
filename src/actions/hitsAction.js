@@ -1,16 +1,17 @@
 import {
-    TOP_ARTISTS_FETCH_SUCCESS,
-    TOP_ARTISTS_FETCH_FAIL
+    TOP_HITS_FETCH_SUCCESS, 
+    TOP_HITS_FETCH_FAIL
 } from '../constants'
 
 import spotify from '../api/spotify'
 
-export const doFetchTopArtists = () => {
+export const doFetchTopHits = () => {
 
     return (dispatch, getState) => {
+        
         const { access_token } = getState().authState
 
-        spotify.get('/top/artists', {
+        spotify.get('/top/tracks', {
             headers: {
                 Authorization: 'Bearer '+access_token
             },
@@ -19,29 +20,27 @@ export const doFetchTopArtists = () => {
             }
         })
         .then(response => {
-            dispatch(doFetchTopArtistsSuccess(response.data.items))
+            dispatch(doFetchTopHitsSuccess(response.data.items))
         })
         .catch(err => {
-            dispatch(doFetchTopArtistsFail(err))
+            dispatch(doFetchTopHitsFail(err))
         })
-    }
 
+    }
 }
 
-export const doFetchTopArtistsSuccess = (list) => {
-
+export const doFetchTopHitsSuccess = (list) => {
     return {
-        type: TOP_ARTISTS_FETCH_SUCCESS,
+        type: TOP_HITS_FETCH_SUCCESS,
         payload: {
             list: [...list]
         }
     }
-
 }
 
-export const doFetchTopArtistsFail = (err) => {
+export const doFetchTopHitsFail = (err) => {
     return {
-        type: TOP_ARTISTS_FETCH_FAIL,
+        type: TOP_HITS_FETCH_FAIL,
         payload: {
             err
         }
