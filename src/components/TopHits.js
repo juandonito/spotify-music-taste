@@ -1,11 +1,19 @@
+import './TopHits.css'
+
 import React from 'react'
 
-const TopHits = () => {
-    return (
-        <div>
-            This is my top hits page
-        </div>
-    )
+class TopHits extends React.Component {
+
+    render() {
+        return (
+            <div className='top-hits'>
+                <div className='header'></div>
+                <div className='list'>
+                </div>
+            </div>
+        )
+    }
+
 }
 
 export default TopHits
