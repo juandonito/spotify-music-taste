@@ -1,6 +1,7 @@
 import './TopHits.css'
 
 import React from 'react'
+import TrackItem from './TrackItem'
 
 import { connect } from 'react-redux'
 import { doFetchTopHits } from '../actions/hitsAction'
@@ -15,12 +16,17 @@ class TopHits extends React.Component {
 
     render() {
 
-        console.log(this.props.topHits)
+        const {
+            topHits
+        } = this.props
+
+        const list = topHits.map((track, key) => <TrackItem key={key} rank={key + 1} track={track} />)
 
         return (
             <div className='top-hits'>
                 <div className='header'></div>
                 <div className='list'>
+                    {list}
                 </div>
             </div>
         )

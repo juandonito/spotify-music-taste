@@ -1,0 +1,45 @@
+.track-item{
+    display: flex;
+    padding: 8px 16px;
+}
+
+.track-item span{
+    margin: auto 4px;
+}
+
+.track-item:hover{
+    background: rgb(248, 248, 248);
+}
+
+.rank{
+    width: 32px;
+    font-size: 16px;
+    font-weight: bold;
+    color: #6A6A6A;
+    text-align: center;
+}
+
+.thumbnail{
+    height: 40px;
+    width: 40px;
+    border-radius: 8px;
+    background: #6A6A6A;
+}
+
+.details{
+    display: flex;
+    flex-direction: column;
+}
+
+.track-name{
+    font-size: 16px;
+    font-weight: bold;
+    letter-spacing: 1px;
+}
+
+.artists{
+    font-size: 12px;
+    font-weight: bold;
+    letter-spacing: 0.5px;
+    color: #6A6A6A;
+}
