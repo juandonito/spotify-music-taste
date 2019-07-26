@@ -1,5 +1,3 @@
-import './TrackItem.css'
-
 import React from 'react'
 
 const TrackItem = ({ track, rank }) => {
@@ -37,14 +35,14 @@ const TrackItem = ({ track, rank }) => {
     }
 
     return (
-        <div className='track-item'>
+        <div className='item'>
             <span className='rank'>{rank}</span>
             {helperPicture()}
             <span className='details'>
-                <span className='track-name'>
+                <span className='info-primary'>
                     {name}
                 </span>
-                <span className='artists'>
+                <span className='info-secondary'>
                     {artistsHelper()}
                 </span>
             </span>
