@@ -33,7 +33,7 @@ export const doFetchTopHitsSuccess = (list) => {
     return {
         type: TOP_HITS_FETCH_SUCCESS,
         payload: {
-            list: [...list]
+            list
         }
     }
 }
