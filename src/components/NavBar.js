@@ -8,6 +8,7 @@ const NavBar = () => {
         <nav className='nav-bar'>
             <Link to='/top-artists'>Top Artists</Link>
             <Link to='/top-hits'>Top Hits</Link>
+            <Link to='/top-recent'>Top Recent</Link>
         </nav>
     )
 }
