@@ -8,6 +8,7 @@ import NavBar from './NavBar'
 
 import TopArtists from './TopArtists'
 import TopHits from './TopHits'
+import TopRecent from './TopRecent';
 
 const NavLayout = () => {
     return (
@@ -15,6 +16,7 @@ const NavLayout = () => {
             <BrowserRouter>
                 <ProtectedRoute path='/top-artists' component={TopArtists}/>
                 <ProtectedRoute path='/top-hits' component={TopHits} />
+                <ProtectedRoute path='/top-recent' component={TopRecent} />
                 <NavBar/>
             </BrowserRouter>
         </React.Fragment>
