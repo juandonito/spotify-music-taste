@@ -1,4 +1,4 @@
-import './TopArtists.css'
+import './Top.css'
 
 import React from 'react'
 import { connect } from 'react-redux'
@@ -22,7 +22,7 @@ class TopArtists extends React.Component{
         const list = topArtists.map((artist, key) => <ArtistItem key={key} artist={artist} rank={key+1} />)
 
         return (
-            <div className='top-artists'>
+            <div className='top artists'>
                 <div className='header'></div>
                 <div className='list'>
                     {list}

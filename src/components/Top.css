@@ -1,4 +1,4 @@
-.top-hits {
+.top {
     width: 100%;
     max-width: 700px;
     margin: 0 auto;
@@ -7,7 +7,7 @@
     box-shadow: 0px 0px 19px 0px rgba(0,0,0,0.2);
 }
 
-.top-hits .header {
+.header {
 
     position: fixed;
     top: 0;
@@ -17,20 +17,17 @@
     width: 100%;
     max-width: 700px;
 
-    background: url(../images/hits.jpg);
+    background: url(../images/band.jpg);
     background-size: cover;
     background-repeat: no-repeat;
-    background-position: center;
 }
 
-.top-hits .list {    
+.list {    
     margin-top: 200px;
     background: white;
 }
 
-.top-hits .list:before{
-
-    content: 'YOUR TOP HITS';
+.list:before{
 
     position: relative;
     top: -2rem;
@@ -41,4 +38,13 @@
     letter-spacing: 1px;
 
     color: white;
+
+}
+
+.artists .list:before{
+    content: 'YOUR TOP ARTISTS';
+}
+
+.hits .list:before{
+    content: 'YOUR TOP HITS';
 }

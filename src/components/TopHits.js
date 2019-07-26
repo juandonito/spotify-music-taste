@@ -1,4 +1,4 @@
-import './TopHits.css'
+import './Top.css'
 
 import React from 'react'
 import { connect } from 'react-redux'
@@ -23,7 +23,7 @@ class TopHits extends React.Component {
         const list = topHits.map((track, key) => <TrackItem key={key} rank={key + 1} track={track} />)
 
         return (
-            <div className='top-hits'>
+            <div className='top hits'>
                 <div className='header'></div>
                 <div className='list'>
                     {list}
