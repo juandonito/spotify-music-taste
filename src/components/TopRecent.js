@@ -22,7 +22,7 @@ class TopRecent extends React.Component {
         const list = recentTracks.map((track, key) => <TrackItem key={key} rank={key + 1} track={track.track} />)
 
         return (
-            <div className='top hits'>
+            <div className='top recent'>
                 <div className='header'></div>
                 <div className='list'>
                     {list}

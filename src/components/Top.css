@@ -48,3 +48,7 @@
 .hits .list:before{
     content: 'YOUR TOP HITS';
 }
+
+.recent .list:before{
+    content: 'RECENTLY PLAYED';
+}
