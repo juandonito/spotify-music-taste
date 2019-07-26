@@ -3,7 +3,7 @@ import './TopArtists.css'
 import React from 'react'
 import { connect } from 'react-redux'
 
-import ArtistItem from './ArtistItem'
+import { ArtistItem } from './Items'
 import { doFetchTopArtists } from '../actions/artistsAction';
 
 class TopArtists extends React.Component{

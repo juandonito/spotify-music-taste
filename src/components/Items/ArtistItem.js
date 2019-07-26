@@ -1,5 +1,3 @@
-import './ArtistItem.css'
-
 import React from 'react'
 
 const ArtistItem = ({ artist, rank }) => {
@@ -32,14 +30,14 @@ const ArtistItem = ({ artist, rank }) => {
     }
     
     return (
-        <div className='artist-item'>
+        <div className='item'>
             <span className='rank'>{rank}</span>
             {helperProfilePicture()}
             <span className='details'>
-                <span className='artist-name'>
+                <span className='info-primary'>
                     {name}
                 </span>
-                <span className='artist-genre'>
+                <span className='info-secondary'>
                     {genres.slice(0, 3).join(', ')}
                 </span>
             </span>

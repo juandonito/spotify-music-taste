@@ -1,9 +1,9 @@
 import './TopHits.css'
 
 import React from 'react'
-import TrackItem from './TrackItem'
-
 import { connect } from 'react-redux'
+
+import { TrackItem } from './Items'
 import { doFetchTopHits } from '../actions/hitsAction'
 
 class TopHits extends React.Component {

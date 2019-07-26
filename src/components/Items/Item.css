@@ -1,13 +1,13 @@
-.artist-item{
+.item{
     display: flex;
     padding: 8px 16px;
 }
 
-.artist-item span{
+.item span{
     margin: auto 4px;
 }
 
-.artist-item:hover{
+.item:hover{
     background: rgb(248, 248, 248);
 }
 
@@ -31,13 +31,13 @@
     flex-direction: column;
 }
 
-.artist-name{
+.info-primary{
     font-size: 16px;
     font-weight: bold;
     letter-spacing: 1px;
 }
 
-.artist-genre{
+.info-secondary{
     font-size: 12px;
     font-weight: bold;
     letter-spacing: 0.5px;
