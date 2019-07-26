@@ -8,7 +8,7 @@ import spotify from '../api/spotify'
 export const doFetchRecentTracks = () => {
     return (dispatch, getState) => {
         
-        const { access_token } = getState.authState
+        const { access_token } = getState().authState
 
         spotify.get('/player/recently-played', {
             headers: {
