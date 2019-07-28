@@ -21,7 +21,7 @@ const TrackItem = ({ track, rank }) => {
             )
         }else{
             return (
-                <img
+                <div
                     className='thumbnail'
                     alt='album'
                 />
