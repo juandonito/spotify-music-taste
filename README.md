@@ -14,6 +14,7 @@ Application created with [create-react-app](https://github.com/facebook/create-r
 
 - Clock Icon made by [Icon Works](https://www.flaticon.com/authors/icon-works) from [flaticon](https://www.flaticon.com/) is licensed by [CC 3.0 BY](http://creativecommons.org/licenses/by/3.0/)
 - Heart Icon  made by [Gregor Cresnar](https://www.flaticon.com/authors/gregor-cresnar) from [flaticon](https://www.flaticon.com/) is licensed by [CC 3.0 BY](http://creativecommons.org/licenses/by/3.0/)
+- Star Icon  made by [Gregor Cresnar](https://www.flaticon.com/authors/gregor-cresnar) from [flaticon](https://www.flaticon.com/) is licensed by [CC 3.0 BY](http://creativecommons.org/licenses/by/3.0/)
 
 ## License
 
