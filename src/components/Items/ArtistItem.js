@@ -21,7 +21,7 @@ const ArtistItem = ({ artist, rank }) => {
             )
         }else{
             return (
-                <img
+                <div
                     className='thumbnail'
                     alt='profile not available'
                 />
