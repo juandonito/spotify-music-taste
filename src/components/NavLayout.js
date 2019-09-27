@@ -1,3 +1,5 @@
+import './NavLayout.css'
+
 import React from 'react'
 
 import { BrowserRouter } from 'react-router-dom'
@@ -12,14 +14,14 @@ import TopRecent from './TopRecent';
 
 const NavLayout = () => {
     return (
-        <React.Fragment>
+        <div className='nav-layout'>
             <BrowserRouter>
                 <ProtectedRoute path='/top-artists' component={TopArtists}/>
                 <ProtectedRoute path='/top-hits' component={TopHits} />
                 <ProtectedRoute path='/top-recent' component={TopRecent} />
                 <NavBar/>
             </BrowserRouter>
-        </React.Fragment>
+        </div>
     )
 }
 
