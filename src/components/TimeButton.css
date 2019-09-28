@@ -8,3 +8,7 @@
 
     cursor: pointer;
 }
+
+.time-button:hover {
+    color: inherit
+}
