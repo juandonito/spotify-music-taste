@@ -1,6 +1,7 @@
 * {
     font-family: 'Lato', sans-serif;
     outline: none;
+    text-decoration: none;
 }
 
 html, body{
@@ -8,6 +9,10 @@ html, body{
     padding: 0;
 }
 
+a {
+    color: inherit;
+}
+
 a:visited{
-    color: black
+    color: inherit;
 }
