@@ -5,7 +5,8 @@ const ArtistItem = ({ artist, rank }) => {
     const {
         name,
         images,
-        genres
+        genres,
+        uri
     } = artist
 
     const helperProfilePicture = () => {
@@ -30,18 +31,20 @@ const ArtistItem = ({ artist, rank }) => {
     }
     
     return (
-        <div className='item'>
-            <span className='rank'>{rank}</span>
-            {helperProfilePicture()}
-            <span className='details'>
-                <span className='info-primary'>
-                    {name}
+        <a href={uri}>
+            <div className='item'>
+                <span className='rank'>{rank}</span>
+                {helperProfilePicture()}
+                <span className='details'>
+                    <span className='info-primary'>
+                        {name}
+                    </span>
+                    <span className='info-secondary'>
+                        {genres.slice(0, 3).join(', ')}
+                    </span>
                 </span>
-                <span className='info-secondary'>
-                    {genres.slice(0, 3).join(', ')}
-                </span>
-            </span>
-        </div>
+            </div>
+        </a>
     )
 }
 

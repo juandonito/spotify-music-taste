@@ -5,7 +5,8 @@ const TrackItem = ({ track, rank }) => {
     const {
         name,
         artists,
-        album
+        album,
+        uri
     } = track
 
     const helperPicture = () => {
@@ -35,18 +36,20 @@ const TrackItem = ({ track, rank }) => {
     }
 
     return (
-        <div className='item'>
-            <span className='rank'>{rank}</span>
-            {helperPicture()}
-            <span className='details'>
-                <span className='info-primary'>
-                    {name}
+        <a href={uri}>
+            <div className='item'>
+                <span className='rank'>{rank}</span>
+                {helperPicture()}
+                <span className='details'>
+                    <span className='info-primary'>
+                        {name}
+                    </span>
+                    <span className='info-secondary'>
+                        {artistsHelper()}
+                    </span>
                 </span>
-                <span className='info-secondary'>
-                    {artistsHelper()}
-                </span>
-            </span>
-        </div>
+            </div>
+        </a>
     )
 }
 
