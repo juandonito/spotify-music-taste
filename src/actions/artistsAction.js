@@ -32,6 +32,17 @@ export const doFetchTopArtists = () => {
 
 }
 
+export const doUpdateTimeRange = (timeRange) => {
+
+    return (dispatch) => {
+
+        dispatch(doSetArtistsTimeRange(timeRange))
+        dispatch(doFetchTopArtists())
+
+    }
+
+}
+
 export const doSetArtistsTimeRange = (timeRange) => {
     
     return {

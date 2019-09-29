@@ -10,7 +10,8 @@
 }
 
 .time-button.active {
-    color: inherit
+    color: inherit;
+    border-bottom: solid black 2px
 }
 
 .time-button:hover {

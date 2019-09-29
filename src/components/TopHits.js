@@ -5,20 +5,21 @@ import { connect } from 'react-redux'
 
 import { TrackItem } from './Items'
 import TimeRangeNav from './TimeRangeNav'
-import { doFetchTopHits } from '../actions/hitsAction'
+import { doFetchTopHits, doUpdateTimeRange } from '../actions/hitsAction'
 
 class TopHits extends React.Component {
 
     componentDidMount() {
         const { fetchTopHits } = this.props
-
         fetchTopHits()
     }
 
     render() {
 
         const {
-            topHits
+            topHits,
+            currentTimeRange,
+            updateHitsTimeRange
         } = this.props
 
         const list = topHits.map((track, key) => <TrackItem key={key} rank={key + 1} track={track} />)
@@ -27,7 +28,10 @@ class TopHits extends React.Component {
             <div className='top hits'>
                 <div className='header'></div>
                 <div className='list'>
-                    <TimeRangeNav/>
+                    <TimeRangeNav
+                        handleTimeRangeChange={updateHitsTimeRange}
+                        currentTimeRange={currentTimeRange}
+                    />
                     {list}
                 </div>
             </div>
@@ -38,13 +42,15 @@ class TopHits extends React.Component {
 
 const mapStateToProps = state => {
     return {
-        topHits : state.hitsState.topHits
+        topHits : state.hitsState.topHits,
+        currentTimeRange : state.hitsState.timeRange
     }
 }
 
 const mapDispatchToProps = dispatch => {
     return {
-        fetchTopHits : () => dispatch(doFetchTopHits())
+        fetchTopHits : () => dispatch(doFetchTopHits()),
+        updateHitsTimeRange: (timeRange) => dispatch(doUpdateTimeRange(timeRange))
     }
 }
 
