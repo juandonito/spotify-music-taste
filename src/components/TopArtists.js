@@ -19,7 +19,8 @@ class TopArtists extends React.Component{
         const {
             topArtists,
             currentTimeRange,
-            updateArtistsTimeRange
+            updateArtistsTimeRange,
+            fetching
         } = this.props
 
         const list = topArtists.map((artist, key) => <ArtistItem key={key} artist={artist} rank={key+1} />)
@@ -32,7 +33,7 @@ class TopArtists extends React.Component{
                         handleTimeRangeChange={updateArtistsTimeRange}
                         currentTimeRange={currentTimeRange}
                     />
-                    {list}
+                    {fetching ? null : list}
                 </div>
             </div>
         )
@@ -43,7 +44,8 @@ class TopArtists extends React.Component{
 const mapstateToProps = (state) => {
     return {
         topArtists: state.artistsState.topArtists,
-        currentTimeRange: state.artistsState.timeRange
+        currentTimeRange: state.artistsState.timeRange,
+        fetching: state.artistsState.fetching
     }
 }
 

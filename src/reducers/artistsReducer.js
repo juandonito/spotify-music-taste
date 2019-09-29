@@ -1,4 +1,5 @@
 import {
+    TOP_ARTISTS_FETCHING_TOGGLE,
     TOP_ARTISTS_FETCH_SUCCESS, 
     TOP_ARTISTS_FETCH_FAIL,
     TOP_ARTISTS_SET_TIME_RANGE
@@ -7,11 +8,15 @@ import {
 const INITIAL_STATE = {
     topArtists : [],
     timeRange: 'long_term',
+    fetching: false,
     err: null
 }
 
 const artistsReducer = (state = INITIAL_STATE, action) => {
     switch(action.type){
+        case TOP_ARTISTS_FETCHING_TOGGLE : {
+            return applyToggleTopArtistsFetching(state, action)
+        }
         case TOP_ARTISTS_SET_TIME_RANGE : {
             return applySetTopArtistsTimeRange(state, action)
         }
@@ -23,6 +28,15 @@ const artistsReducer = (state = INITIAL_STATE, action) => {
         }
         default: return state
     }
+}
+
+const applyToggleTopArtistsFetching = (state, action) => {
+
+    return {
+        ...state,
+        fetching: !state.fetching
+    }
+
 }
 
 const applySetTopArtistsTimeRange = (state, action) => {
