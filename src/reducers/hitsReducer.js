@@ -1,18 +1,22 @@
 import {
+    TOP_HITS_FETCHING_TOGGLE,
     TOP_HITS_FETCH_SUCCESS,
     TOP_HITS_FETCH_FAIL,
-    TOP_ARTISTS_SET_TIME_RANGE,
     TOP_HITS_SET_TIME_RANGE
 } from '../constants'
 
 const INITIAL_STATE = {
     topHits : [],
     timeRange: 'long_term',
+    fetching: false,
     err: null
 }
 
 const hitsReducer = (state = INITIAL_STATE, action) => {
     switch(action.type){
+        case TOP_HITS_FETCHING_TOGGLE: {
+            return applyToggleTopHitsFetching(state, action)
+        }
         case TOP_HITS_SET_TIME_RANGE: {
             return applySetTopHitsTimeRange(state, action)
         }
@@ -23,6 +27,13 @@ const hitsReducer = (state = INITIAL_STATE, action) => {
             return applyTopHitsFetchFail(state, action)
         }
         default: return state
+    }
+}
+
+const applyToggleTopHitsFetching = (state, action) => {
+    return {
+        ...state,
+        fetching: !state.fetching
     }
 }
 

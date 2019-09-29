@@ -1,4 +1,5 @@
 import {
+    TOP_HITS_FETCHING_TOGGLE,
     TOP_HITS_FETCH_SUCCESS, 
     TOP_HITS_FETCH_FAIL,
     TOP_HITS_SET_TIME_RANGE
@@ -13,6 +14,8 @@ export const doFetchTopHits = () => {
         const { access_token } = getState().authState
         const { timeRange } = getState().hitsState
 
+        dispatch(doToggleTopHitsFetching())
+
         spotify.get('/top/tracks', {
             headers: {
                 Authorization: 'Bearer '+access_token
@@ -24,11 +27,19 @@ export const doFetchTopHits = () => {
         })
         .then(response => {
             dispatch(doFetchTopHitsSuccess(response.data.items))
+            dispatch(doToggleTopHitsFetching())
         })
         .catch(err => {
             dispatch(doFetchTopHitsFail(err))
+            dispatch(doToggleTopHitsFetching())
         })
 
+    }
+}
+
+export const doToggleTopHitsFetching = () => {
+    return {
+        type: TOP_HITS_FETCHING_TOGGLE
     }
 }
 

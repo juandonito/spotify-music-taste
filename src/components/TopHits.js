@@ -19,7 +19,8 @@ class TopHits extends React.Component {
         const {
             topHits,
             currentTimeRange,
-            updateHitsTimeRange
+            updateHitsTimeRange,
+            fetching
         } = this.props
 
         const list = topHits.map((track, key) => <TrackItem key={key} rank={key + 1} track={track} />)
@@ -32,7 +33,7 @@ class TopHits extends React.Component {
                         handleTimeRangeChange={updateHitsTimeRange}
                         currentTimeRange={currentTimeRange}
                     />
-                    {list}
+                    {fetching ? null : list}
                 </div>
             </div>
         )
@@ -43,7 +44,8 @@ class TopHits extends React.Component {
 const mapStateToProps = state => {
     return {
         topHits : state.hitsState.topHits,
-        currentTimeRange : state.hitsState.timeRange
+        currentTimeRange : state.hitsState.timeRange,
+        fetching: state.hitsState.fetching
     }
 }
 
