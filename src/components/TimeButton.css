@@ -1,0 +1,19 @@
+.time-button {
+    background: none;
+    border: none;
+    color: darkgray;
+
+    font-size: 16px;
+    font-weight: bold;
+
+    cursor: pointer;
+}
+
+.time-button.active {
+    color: inherit;
+    border-bottom: solid black 2px
+}
+
+.time-button:hover {
+    color: inherit
+}
