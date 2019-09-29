@@ -4,12 +4,15 @@ import React from 'react'
 
 import TimeButton from './TimeButton'
 
+import { options, labels } from '../constants/timeRange'
+
 const TimeRangeNav = () => {
+
+    const buttonList = options.map(option => <TimeButton option={option}>{labels[option]}</TimeButton>)
+    
     return (
         <div className='time-range-nav'>
-            <TimeButton>All time</TimeButton>
-            <TimeButton>Last 6 months</TimeButton>
-            <TimeButton>Last month</TimeButton>
+            {buttonList}
         </div>
     )
 }

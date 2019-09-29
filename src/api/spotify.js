@@ -4,12 +4,6 @@ const spotify =  axios.create({
     baseURL: 'https://api.spotify.com/v1/me'
 })
 
-export const TIME_RANGE_OPTIONS = {
-    LONG : 'long_term',
-    MEDIUM : 'medium_term',
-    SHORT : 'short_term'
-}
-
 export const spotifyAuth = () => {
 
     const baseURL = 'https://accounts.spotify.com/authorize'
