@@ -5,7 +5,7 @@ import { connect } from 'react-redux'
 
 import { ArtistItem } from './Items'
 import TimeRangeNav from './TimeRangeNav'
-import { doFetchTopArtists } from '../actions/artistsAction';
+import { doFetchTopArtists, doSetArtistsTimeRange } from '../actions/artistsAction';
 
 class TopArtists extends React.Component{
 
@@ -17,7 +17,9 @@ class TopArtists extends React.Component{
     render() {
 
         const {
-            topArtists
+            topArtists,
+            currentTimeRange,
+            setArtistsTimeRange
         } = this.props
 
         const list = topArtists.map((artist, key) => <ArtistItem key={key} artist={artist} rank={key+1} />)
@@ -26,7 +28,10 @@ class TopArtists extends React.Component{
             <div className='top artists'>
                 <div className='header'></div>
                 <div className='list'>
-                    <TimeRangeNav />
+                    <TimeRangeNav 
+                        handleTimeRangeChange={setArtistsTimeRange}
+                        currentTimeRange={currentTimeRange}
+                    />
                     {list}
                 </div>
             </div>
@@ -37,13 +42,15 @@ class TopArtists extends React.Component{
 
 const mapstateToProps = (state) => {
     return {
-        topArtists: state.artistsState.topArtists
+        topArtists: state.artistsState.topArtists,
+        currentTimeRange: state.artistsState.timeRange
     }
 }
 
 const mapDispatchToProps = (dispatch) => {
     return {
-        fetchTopArtists : () => dispatch(doFetchTopArtists())
+        fetchTopArtists : () => dispatch(doFetchTopArtists()),
+        setArtistsTimeRange: (timeRange) => dispatch(doSetArtistsTimeRange(timeRange))
     }
 }
 

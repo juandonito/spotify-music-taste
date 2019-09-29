@@ -9,6 +9,10 @@
     cursor: pointer;
 }
 
+.time-button.active {
+    color: inherit
+}
+
 .time-button:hover {
     color: inherit
 }

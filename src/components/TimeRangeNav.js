@@ -1,14 +1,26 @@
 import './TimeRangeNav.css'
+import './TimeButton.css'
 
 import React from 'react'
 
-import TimeButton from './TimeButton'
-
 import { options, labels } from '../constants/timeRange'
 
-const TimeRangeNav = () => {
+const TimeRangeNav = ({ handleTimeRangeChange, currentTimeRange}) => {
 
-    const buttonList = options.map(option => <TimeButton option={option}>{labels[option]}</TimeButton>)
+    const handleClick = e => {
+        handleTimeRangeChange(e.target.value)
+    }
+
+    const buttonList = options.map(option => 
+        <button 
+            key={labels[option]}
+            value={option}
+            className={option === currentTimeRange ? 'time-button active' : 'time-button'}
+            onClick={e => handleClick(e)}
+        >
+            {labels[option]}
+        </button>
+    )
     
     return (
         <div className='time-range-nav'>
