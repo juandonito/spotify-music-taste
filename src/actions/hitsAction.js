@@ -3,9 +3,11 @@ import {
     TOP_HITS_FETCH_FAIL
 } from '../constants'
 
+import TIME_RANGE from '../api/spotify'
+
 import spotify from '../api/spotify'
 
-export const doFetchTopHits = () => {
+export const doFetchTopHits = (timeRange = TIME_RANGE.LONG) => {
 
     return (dispatch, getState) => {
         
@@ -16,7 +18,8 @@ export const doFetchTopHits = () => {
                 Authorization: 'Bearer '+access_token
             },
             params: {
-                limit: 50
+                limit: 50,
+                time_range: timeRange
             }
         })
         .then(response => {

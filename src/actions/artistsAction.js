@@ -3,9 +3,11 @@ import {
     TOP_ARTISTS_FETCH_FAIL
 } from '../constants'
 
+import TIME_RANGE from '../api/spotify'
+
 import spotify from '../api/spotify'
 
-export const doFetchTopArtists = () => {
+export const doFetchTopArtists = (timeRange = TIME_RANGE.LONG) => {
 
     return (dispatch, getState) => {
         const { access_token } = getState().authState
@@ -15,7 +17,8 @@ export const doFetchTopArtists = () => {
                 Authorization: 'Bearer '+access_token
             },
             params: {
-                limit: 50
+                limit: 50,
+                time_range: timeRange
             }
         })
         .then(response => {
