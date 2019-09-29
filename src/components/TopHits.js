@@ -4,7 +4,7 @@ import React from 'react'
 import { connect } from 'react-redux'
 
 import { TrackItem } from './Items'
-import TimeNav from './TimeNav'
+import TimeRangeNav from './TimeRangeNav'
 import { doFetchTopHits } from '../actions/hitsAction'
 
 class TopHits extends React.Component {
@@ -27,7 +27,7 @@ class TopHits extends React.Component {
             <div className='top hits'>
                 <div className='header'></div>
                 <div className='list'>
-                    <TimeNav/>
+                    <TimeRangeNav/>
                     {list}
                 </div>
             </div>

@@ -4,7 +4,7 @@ import React from 'react'
 import { connect } from 'react-redux'
 
 import { ArtistItem } from './Items'
-import TimeNav from './TimeNav'
+import TimeRangeNav from './TimeRangeNav'
 import { doFetchTopArtists } from '../actions/artistsAction';
 
 class TopArtists extends React.Component{
@@ -26,7 +26,7 @@ class TopArtists extends React.Component{
             <div className='top artists'>
                 <div className='header'></div>
                 <div className='list'>
-                    <TimeNav />
+                    <TimeRangeNav />
                     {list}
                 </div>
             </div>

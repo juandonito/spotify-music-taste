@@ -1,12 +1,12 @@
-import './TimeNav.css'
+import './TimeRangeNav.css'
 
 import React from 'react'
 
 import TimeButton from './TimeButton'
 
-const TimeNav = () => {
+const TimeRangeNav = () => {
     return (
-        <div className='time-nav'>
+        <div className='time-range-nav'>
             <TimeButton>All time</TimeButton>
             <TimeButton>Last 6 months</TimeButton>
             <TimeButton>Last month</TimeButton>
@@ -14,4 +14,4 @@ const TimeNav = () => {
     )
 }
 
-export default TimeNav
+export default TimeRangeNav
